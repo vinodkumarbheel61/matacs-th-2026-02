@@ -1,0 +1,25 @@
+# Confidential candidate brief and source PDFs (Per brief instructions: do not copy or redistribute)
+MATACS-TH-2026-02_Candidate_Brief.pdf
+*.pdf
+!diagram/*.pdf
+
+# Environment files
+.env
+.env.local
+
+# Java build artifacts
+*.class
+*.jar
+target/
+bin/
+.settings/
+.project
+.classpath
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS files
+.DS_Store
+Thumbs.db
