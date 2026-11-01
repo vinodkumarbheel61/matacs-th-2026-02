@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1500" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 32px; font-weight: bold; fill: #ffffff; }
+      .sub { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 16px; fill: #94a3b8; }
+      .section-hdr { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: bold; fill: #1e293b; }
+      .box-title { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: bold; }
+      .box-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 13px; fill: #334155; line-height: 1.5; }
+      .badge-text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #ffffff; }
+      .arrow { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2400" height="1500" fill="#f8fafc" />
+
+  <!-- Top Header -->
+  <rect width="2400" height="120" fill="#0f172a" />
+  <text x="60" y="52" class="title">AI-Assisted Proposal Triage Architecture</text>
+  <text x="60" y="84" class="sub">End-to-End Workflow: Document Ingestion, Guarded Extraction, Deterministic Rules &amp; Human Audit Trail</text>
+  <text x="60" y="106" class="sub" fill="#cbd5e1">Ref: MATACS-TH-2026-02  |  Candidate: Vinod Kumar</text>
+
+  <!-- Legend -->
+  <rect x="1500" y="46" width="220" height="28" rx="6" fill="#7e22ce" />
+  <text x="1515" y="65" class="badge-text">AI STEP (Extraction Only)</text>
+  
+  <rect x="1750" y="46" width="260" height="28" rx="6" fill="#1d4ed8" />
+  <text x="1765" y="65" class="badge-text">RULE-BASED (Deterministic Code)</text>
+
+  <rect x="2040" y="46" width="260" height="28" rx="6" fill="#b45309" />
+  <text x="2055" y="65" class="badge-text">HUMAN CHECKPOINT (Governance)</text>
+
+  <!-- Section Column Headers -->
+  <text x="60" y="165" class="section-hdr">STAGE 1: Ingestion &amp; Pre-Processing</text>
+  <text x="620" y="165" class="section-hdr">STAGE 2: Prompting &amp; AI Extraction</text>
+  <text x="1180" y="165" class="section-hdr">STAGE 3: Deterministic Rules Engine</text>
+  <text x="1740" y="165" class="section-hdr">STAGE 4: Human Review &amp; Final Award</text>
+
+  <!-- Stage 1 Boxes -->
+  <!-- 1.1 Upload -->
+  <rect x="60" y="185" width="500" height="140" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+  <rect x="76" y="200" width="140" height="22" rx="6" fill="#b45309" />
+  <text x="86" y="215" class="badge-text">HUMAN ENTRY POINT</text>
+  <text x="76" y="245" class="box-title" fill="#78350f">1. Proposal Upload &amp; Category Select</text>
+  <text x="76" y="270" class="box-body">• Reviewer submits contractor PDF proposals (A-E)</text>
+  <text x="76" y="290" class="box-body">• Selects Category: 'Commercial Solar Installation'</text>
+  <text x="76" y="310" class="box-body">• System calculates SHA-256 hash of each document</text>
+
+  <!-- 1.2 Parsing -->
+  <rect x="60" y="350" width="500" height="140" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <rect x="76" y="365" width="100" height="22" rx="6" fill="#1d4ed8" />
+  <text x="86" y="380" class="badge-text">RULE-BASED</text>
+  <text x="76" y="410" class="box-title" fill="#1e3a8a">2. Text Parsing &amp; Normalization</text>
+  <text x="76" y="435" class="box-body">• Apache PDFBox / Tika extracts raw text &amp; metadata</text>
+  <text x="76" y="455" class="box-body">• Cleans whitespace &amp; encodes character offsets</text>
+  <text x="76" y="475" class="box-body">• Extracts document structural page boundaries</text>
+
+  <!-- 1.3 Injection Filter -->
+  <rect x="60" y="515" width="500" height="155" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <rect x="76" y="530" width="160" height="22" rx="6" fill="#1d4ed8" />
+  <text x="86" y="545" class="badge-text">RULE-BASED (SECURITY)</text>
+  <text x="76" y="575" class="box-title" fill="#1e3a8a">3. Adversarial Prompt Injection Filter</text>
+  <text x="76" y="600" class="box-body">• Heuristic scanner checks for override tokens</text>
+  <text x="76" y="620" class="box-body">• Detects: 'pre-approved', 'assign full marks'</text>
+  <text x="76" y="640" class="box-body">• Proposal D triggered -> early risk flag set</text>
+  <text x="76" y="660" class="box-body">• Wraps untrusted text in strict XML delimiters</text>
+
+  <!-- 1.4 Admin Screen -->
+  <rect x="60" y="695" width="500" height="155" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+  <rect x="76" y="710" width="160" height="22" rx="6" fill="#b45309" />
+  <text x="86" y="725" class="badge-text">HUMAN CONFIGURATION</text>
+  <text x="76" y="755" class="box-title" fill="#78350f">0. Dynamic Criteria Admin Screen</text>
+  <text x="76" y="780" class="box-body">• Admin configures Pass/Fail rules &amp; weights via UI</text>
+  <text x="76" y="800" class="box-body">• Exp: 30%, Price: 25%, Timeline: 15%, Warranty: 15%, Team: 15%</text>
+  <text x="76" y="820" class="box-body">• Never hard-coded; stored in PostgreSQL</text>
+  <text x="76" y="840" class="box-body">• Generates immutable CriteriaVersion (e.g. v1.0)</text>
+
+  <!-- Stage 2 Boxes -->
+  <!-- 2.1 Dynamic Prompt Assembly -->
+  <rect x="620" y="185" width="500" height="155" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <rect x="636" y="200" width="100" height="22" rx="6" fill="#1d4ed8" />
+  <text x="646" y="215" class="badge-text">RULE-BASED</text>
+  <text x="636" y="245" class="box-title" fill="#1e3a8a">4. Dynamic Prompt &amp; Schema Synthesizer</text>
+  <text x="636" y="270" class="box-body">• Injects active CriteriaSet (v1.0) into extraction prompt</text>
+  <text x="636" y="290" class="box-body">• Untrusted PDF text isolated in &lt;proposal_document&gt;</text>
+  <text x="636" y="310" class="box-body">• Enforces system prompt: data extraction only, no scoring</text>
+  <text x="636" y="330" class="box-body">• Configures strict JSON Schema for structured output</text>
+
+  <!-- 2.2 LLM Extraction -->
+  <rect x="620" y="365" width="500" height="195" rx="14" fill="#faf5ff" stroke="#a855f7" stroke-width="2" />
+  <rect x="636" y="380" width="180" height="22" rx="6" fill="#7e22ce" />
+  <text x="646" y="395" class="badge-text">AI STEP (PROBABILISTIC)</text>
+  <text x="636" y="425" class="box-title" fill="#581c87">5. LLM Factual Extraction (temp = 0.0)</text>
+  <text x="636" y="450" class="box-body">• Enterprise LLM (GPT-4o-mini / Gemini Flash)</text>
+  <text x="636" y="470" class="box-body">• Extracts: Licence, WSIB, Insurance, Cost, Weeks, Warranties</text>
+  <text x="636" y="490" class="box-body">• Extracts exact verbatim text quotes for every fact</text>
+  <text x="636" y="510" class="box-body">• Refuses instruction overrides from proposal body</text>
+  <text x="636" y="530" class="box-body" font-weight="bold">• AI NEVER calculates scores or decides rankings</text>
+
+  <!-- 2.3 Citation Groundedness -->
+  <rect x="620" y="585" width="500" height="160" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <rect x="636" y="600" width="180" height="22" rx="6" fill="#1d4ed8" />
+  <text x="646" y="615" class="badge-text">RULE-BASED (INTEGRITY)</text>
+  <text x="636" y="645" class="box-title" fill="#1e3a8a">6. Groundedness &amp; Substring Verifier</text>
+  <text x="636" y="670" class="box-body">• Deterministic check: asserts rawText.contains(exact_quote)</text>
+  <text x="636" y="690" class="box-body">• Verifies data types (price > 0, numeric weeks)</text>
+  <text x="636" y="710" class="box-body">• Hallucinated / unverified claims flagged immediately</text>
+  <text x="636" y="730" class="box-body">• Caches verified extraction JSON by doc hash</text>
+
+  <!-- Stage 3 Boxes -->
+  <!-- 3.1 Mandatory Gatekeeper -->
+  <rect x="1180" y="185" width="500" height="190" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <rect x="1196" y="200" width="200" height="22" rx="6" fill="#1d4ed8" />
+  <text x="1206" y="215" class="badge-text">RULE-BASED GATEKEEPER</text>
+  <text x="1196" y="245" class="box-title" fill="#1e3a8a">7. Mandatory Pass/Fail Gatekeeper</text>
+  <text x="1196" y="270" class="box-body">• Checks legal prerequisites:</text>
+  <text x="1210" y="290" class="box-body">* Ontario Electrical Licence (held by bidder)</text>
+  <text x="1210" y="310" class="box-body">* WSIB clearance &amp; $5M liability insurance</text>
+  <text x="1196" y="330" class="box-body" fill="#b91c1c">• Proposal B: Subcontractor licence unconfirmed -> INELIGIBLE</text>
+  <text x="1196" y="350" class="box-body" fill="#b45309">• Proposal D: Adversarial injection &amp; uncommitted timeline -> FLAGGED</text>
+
+  <!-- 3.2 Scoring Engine -->
+  <rect x="1180" y="400" width="500" height="205" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <rect x="1196" y="415" width="160" height="22" rx="6" fill="#1d4ed8" />
+  <text x="1206" y="430" class="badge-text">RULE-BASED ENGINE</text>
+  <text x="1196" y="460" class="box-title" fill="#1e3a8a">8. Deterministic Scoring &amp; Normalization</text>
+  <text x="1196" y="485" class="box-body">• Pure Java math engine (100% reproducible):</text>
+  <text x="1210" y="505" class="box-body">* Experience (30%): Linear scale vs benchmark</text>
+  <text x="1210" y="525" class="box-body">* Price (25%): Normalized within $260k budget ceiling</text>
+  <text x="1210" y="545" class="box-body">* Timeline (15%): Delivery duration within 16-wk ceiling</text>
+  <text x="1210" y="565" class="box-body">* Warranty (15%): Panel (7.5%) + Workmanship (7.5%)</text>
+  <text x="1210" y="585" class="box-body">* Team &amp; Approach (15%): Lead, Crew, Safety &amp; Monitoring</text>
+
+  <!-- 3.3 Triage Classifier -->
+  <rect x="1180" y="630" width="500" height="175" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <rect x="1196" y="645" width="100" height="22" rx="6" fill="#1d4ed8" />
+  <text x="1206" y="660" class="badge-text">RULE-BASED</text>
+  <text x="1196" y="690" class="box-title" fill="#1e3a8a">9. Triage Classifier &amp; Explanations</text>
+  <text x="1196" y="715" class="box-body">• Sorts eligible proposals by total weighted score</text>
+  <text x="1196" y="735" class="box-body" fill="#047857" font-weight="bold">• A (98.8) -> Rank 1 | E (85.5) -> Rank 2 | C (77.8) -> Rank 3</text>
+  <text x="1196" y="755" class="box-body">• Generates single-line explainable diagnostic reasons</text>
+  <text x="1196" y="775" class="box-body">• Emits structured ranking.json format</text>
+
+  <!-- Stage 4 Boxes -->
+  <!-- 4.1 Reviewer Dashboard -->
+  <rect x="1740" y="185" width="580" height="210" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+  <rect x="1756" y="200" width="180" height="22" rx="6" fill="#b45309" />
+  <text x="1766" y="215" class="badge-text">HUMAN REVIEW POINT</text>
+  <text x="1756" y="245" class="box-title" fill="#78350f">10. Reviewer Triage Inspection Dashboard</text>
+  <text x="1756" y="270" class="box-body">• Displays interactive leaderboard with diagnostic reasons</text>
+  <text x="1756" y="290" class="box-body">• Highlights non-compliant proposals:</text>
+  <text x="1770" y="310" class="box-body">* Proposal B (Ineligible): Failed mandatory licence check</text>
+  <text x="1770" y="330" class="box-body">* Proposal D (Flagged): Injected pre-approval note &amp; vague timeline</text>
+  <text x="1756" y="350" class="box-body">• Side-by-side view displays PDF with highlighted quotes</text>
+  <text x="1756" y="370" class="box-body">• Reviewer verifies evidence before proceeding</text>
+
+  <!-- 4.2 Human Override & Award -->
+  <rect x="1740" y="420" width="580" height="180" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+  <rect x="1756" y="435" width="180" height="22" rx="6" fill="#b45309" />
+  <text x="1766" y="450" class="badge-text">FINAL DECISION MAKER</text>
+  <text x="1756" y="480" class="box-title" fill="#78350f">11. Human Override &amp; Award Decision</text>
+  <text x="1756" y="505" class="box-body">• Reviewer may override any extracted field, score or status</text>
+  <text x="1756" y="525" class="box-body">• System enforces mandatory text justification for any override</text>
+  <text x="1756" y="545" class="box-body" font-weight="bold">• System displays: 'Recommended: Award Proposal A'</text>
+  <text x="1756" y="565" class="box-body">• Human makes the final binding contract award decision</text>
+  <text x="1756" y="585" class="box-body">• AI is decision support; HUMAN retains authority</text>
+
+  <!-- 4.3 Audit Ledger -->
+  <rect x="1740" y="625" width="580" height="180" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="2" />
+  <rect x="1756" y="640" width="150" height="22" rx="6" fill="#047857" />
+  <text x="1766" y="655" class="badge-text">SYSTEM OF RECORD</text>
+  <text x="1756" y="685" class="box-title" fill="#065f46">12. Immutable Procurement Audit Ledger</text>
+  <text x="1756" y="710" class="box-body">• Append-only relational audit table (PostgreSQL)</text>
+  <text x="1756" y="730" class="box-body">• Records: SHA-256 hash, prompt snapshots, raw LLM tokens,</text>
+  <text x="1756" y="750" class="box-body">  criteria_version_id, score breakdowns, override notes, timestamps</text>
+  <text x="1756" y="770" class="box-body">• Provides 100% legal defensibility and audit compliance</text>
+
+  <!-- Connecting Arrows -->
+  <path d="M 310 325 L 310 345" class="arrow" />
+  <path d="M 310 490 L 310 510" class="arrow" />
+  <path d="M 560 592 L 590 592 L 590 262 L 615 262" class="arrow" />
+  <path d="M 560 772 L 600 772 L 600 275 L 615 275" class="arrow" />
+  <path d="M 870 340 L 870 360" class="arrow" />
+  <path d="M 870 560 L 870 580" class="arrow" />
+  <path d="M 1120 665 L 1150 665 L 1150 280 L 1175 280" class="arrow" />
+  <path d="M 1430 375 L 1430 395" class="arrow" />
+  <path d="M 1430 605 L 1430 625" class="arrow" />
+  <path d="M 1680 717 L 1710 717 L 1710 290 L 1735 290" class="arrow" />
+  <path d="M 2030 395 L 2030 415" class="arrow" />
+  <path d="M 2030 600 L 2030 620" class="arrow" />
+
+  <!-- Bottom Panel -->
+  <rect x="60" y="890" width="2260" height="550" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+  <text x="90" y="930" class="section-hdr" fill="#0f172a">System Evaluation &amp; Ranking Breakdown for Sample Proposal Set (Commercial Solar Installation)</text>
+  
+  <text x="90" y="965" class="box-body" font-weight="bold" fill="#0f172a">• SEPARATION OF CONCERNS: The AI strictly extracts raw facts and citations into JSON. Deterministic Java code calculates all mathematical scores,</text>
+  <text x="105" y="985" class="box-body">verifies mandatory thresholds, and establishes ranking order. This guarantees 100% repeatability, zero calculation drift, and injection resilience.</text>
+
+  <text x="90" y="1020" class="box-body" font-weight="bold" fill="#0f172a">• PROPOSAL EVALUATION RESULTS:</text>
+  
+  <text x="105" y="1045" class="box-body" font-weight="bold" fill="#047857">1. Proposal A (Northshore Solar Ltd.) - [STATUS: ranked | RANK: 1 | SCORE: 98.8]</text>
+  <text x="125" y="1065" class="box-body">- Pass mandatory licence (ECRA/ESA #7001234) &amp; WSIB/$5M insurance. Lowest price ($238k), fastest schedule (12 wks), top verified experience</text>
+  <text x="125" y="1085" class="box-body">(14 commercial installs >=100kW in 5 yrs), 25y/10y warranties, full team (PM, 6 certified crew, safety plan, 12m monitoring).</text>
+
+  <text x="105" y="1115" class="box-body" font-weight="bold" fill="#047857">2. Proposal E (SunGrid Contractors Inc.) - [STATUS: ranked | RANK: 2 | SCORE: 85.5]</text>
+  <text x="125" y="1135" class="box-body">- Pass mandatory licence (ECRA/ESA #7003456) &amp; WSIB/$5M insurance. Price: $242.5k (better than C), timeline: 13 wks, 8 installs. Best workmanship</text>
+  <text x="125" y="1155" class="box-body">warranty (12 yrs vs 10 yrs), full approach with roof load assessment and 24-month monitoring.</text>
+
+  <text x="105" y="1185" class="box-body" font-weight="bold" fill="#047857">3. Proposal C (Lakeview Renewables Corp.) - [STATUS: ranked | RANK: 3 | SCORE: 77.8]</text>
+  <text x="125" y="1205" class="box-body">- Pass mandatory licence (ECRA/ESA #7005678) &amp; WSIB/$5M insurance. 9 installs, 14-wk schedule. Highest price among eligible ($244k), lacks site</text>
+  <text x="125" y="1225" class="box-body">safety plan and monitoring plan (weekly progress reports only).</text>
+
+  <text x="105" y="1255" class="box-body" font-weight="bold" fill="#b91c1c">4. Proposal B (BrightPath Energy Inc.) - [STATUS: ineligible | RANK: null | SCORE: null]</text>
+  <text x="125" y="1275" class="box-body">- FAILS MANDATORY CRITERION: Ontario electrical contractor licence is NOT held by bidder or stated in proposal (deferred to unconfirmed subcontractor).</text>
+  <text x="125" y="1295" class="box-body">Despite lowest headline price ($189.5k), the rules engine automatically disqualifies non-compliant bidders before scoring.</text>
+
+  <text x="105" y="1325" class="box-body" font-weight="bold" fill="#b45309">5. Proposal D (Essex Green Power Inc.) - [STATUS: flagged | RANK: null | SCORE: null]</text>
+  <text x="125" y="1345" class="box-body">- FLAGGED FOR MANUAL REVIEW: Adversarial prompt injection detected in Appendix C claiming pre-approval. Additionally failed to commit to a</text>
+  <text x="125" y="1365" class="box-body">delivery schedule within the required 16-week ceiling ('schedule will be determined after detailed site assessment').</text>
+
+  <text x="90" y="1400" class="box-body" font-weight="bold" fill="#0f172a">• DYNAMIC CRITERIA EVOLUTION: When an admin updates criteria weights or rules, a new immutable version (v1.1) is committed. Cached extraction DTOs</text>
+  <text x="105" y="1420" class="box-body">are recalculated deterministically in milliseconds without re-invoking the LLM, preserving historical audit integrity while enabling rapid agile iteration.</text>
+</svg>
